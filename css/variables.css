@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: local("Montserrat Alternates"), url("/fonts/MontserratAlternates-Regular.woff2") format("woff2"), url("/fonts/MontserratAlternates-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: local("Montserrat Alternates SemiBold"), url("/fonts/MontserratAlternates-SemiBold.woff2") format("woff2"), url("/fonts/MontserratAlternates-SemiBold.woff") format("woff");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Great Vibes";
+  src: local("Great Vibes"), url("/fonts/GreatVibes-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+}/*# sourceMappingURL=variables.css.map */

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="header-nav">
+            <ul class="header-nav-list">
+                <li class="header-nav-li">
+                    <img class="nav-img" src="img/Rectangle 16char.svg" height="32">
+                    <a href="#" class="nav-link">Персонаж</a>
+                </li>
+                <li class="header-nav-li">
+                    <img class="nav-img" src="img/Rectangle 16weap.svg" height="32">
+                    <a href="#" class="nav-link">Конус</a>
+                </li>
+                <li class="header-nav-li">
+                    <img class="nav-img" src="img/Rectangle 16relic.svg" height="32">
+                    <a href="#" class="nav-link">Реликвии</a>
+                </li>
+                <li class="header-nav-li">
+                    <img class="nav-img" src="img/Rectangle 16jump.svg" height="32">
+                    <a href="#" class="nav-link">Прыжки</a>
+                </li>
+                <li class="header-nav-li">
+                    <img class="nav-img" src="img/Rectangle 16admin.svg" height="32">
+                    <a href="#" class="nav-link">Управление</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="notification-icon"></div>
+    </header>
+
+    <main>
+        <section class="main-character-section">
+            <div class="character-image-container">
+                <img class="character-image" src="/img/Лоча.webp" height="720">
+            </div>
+            <div class="character-info">
+                <h1 class="character-name">Лоча</h1>
+                <div class="character-stars">
+                    <img src="/img/star.svg" alt="Star" class="star"/>
+                    <img src="/img/star.svg" alt="Star" class="star"/>
+                    <img src="/img/star.svg" alt="Star" class="star"/>
+                    <img src="/img/star.svg" alt="Star" class="star"/>
+                    <img src="/img/star.svg" alt="Star" class="star"/>
+                </div>
+                <div class="character-progress-bar">
+                    <div class="progress-value" style="width: 78%;"></div>
+                    <span class="progress-procent italics">78%</span>
+                </div>
+                <ul class="eidolons-list">
+                    <li class="eidolon-item checked">
+                        <img class="eidolon-icon" src="/img/скиталец.webp" alt="Eidolon 1">
+                        <div class="tooltip">
+                            <h3>Попытка дурака</h3>
+                            <p>Уровень навыка повышается на 2, максимальный уровень - 15. 
+                                Уровень базовой атаки повышается на 1, максимальный уровень - 10.</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="level-up-progress-container">
+                    <h2 class="level-up-title">Уровень возвышения</h2>
+                    <div class="level-up-bar">
+                        <div class="level-up-value" style="width: 25%;"></div>
+                        <div class="level-up-thumb" style="left: calc(25% - 24px);"></div> <!-- Ползунок -->
+                    </div>
+                    <div class="level-up-indicators">
+                        <label class="level-up-indicator italics checked" data-level="1"><input type="checkbox" checked>1</label>
+                        <label class="level-up-indicator italics checked" data-level="2"><input type="checkbox" checked>2</label>
+                        <label class="level-up-indicator italics checked" data-level="3"><input type="checkbox" checked>3</label>
+                        <label class="level-up-indicator italics checked" data-level="4"><input type="checkbox" checked>4</label>
+                        <label class="level-up-indicator italics" data-level="5"><input type="checkbox">5</label>
+                        <label class="level-up-indicator italics" data-level="6"><input type="checkbox">6</label>
+                    </div>
+                </div> 
+                <div class="weapon-info-container">
+                    <h2 class="weapon-title">Эхо из гроба</h2>
+                    <div class="weapon-stars">
+                        <img src="/img/star.svg" alt="Star" class="star"/>
+                        <img src="/img/star.svg" alt="Star" class="star"/>
+                        <img src="/img/star.svg" alt="Star" class="star"/>
+                        <img src="/img/star.svg" alt="Star" class="star"/>
+                        <img src="/img/star.svg" alt="Star" class="star"/>
+                    </div>
+                </div>              
+            </div>
+        </section>
+    </main>
+</body>
+</html>
