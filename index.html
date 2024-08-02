@@ -66,11 +66,11 @@
                 </ul>
                 <div class="level-up-progress-container">
                     <h2 class="level-up-title">Уровень возвышения</h2>
-                    <div class="level-up-bar">
-                        <div class="level-up-value" style="width: 25%;"></div>
-                        <div class="level-up-thumb" style="left: calc(25% - 24px);"></div> <!-- Ползунок -->
+                    <div class="level-up-bar horizontal">
+                        <div class="level-up-value" style="width: 78%;"></div>
+                        <div class="level-up-thumb" style="left: calc(78% - 24px);"></div> <!-- Ползунок -->
                     </div>
-                    <div class="level-up-indicators">
+                    <div class="level-up-indicators horizontal">
                         <label class="level-up-indicator italics checked" data-level="1"><input type="checkbox" checked>1</label>
                         <label class="level-up-indicator italics checked" data-level="2"><input type="checkbox" checked>2</label>
                         <label class="level-up-indicator italics checked" data-level="3"><input type="checkbox" checked>3</label>
@@ -87,6 +87,53 @@
                         <img src="/img/star.svg" alt="Star" class="star"/>
                         <img src="/img/star.svg" alt="Star" class="star"/>
                         <img src="/img/star.svg" alt="Star" class="star"/>
+                    </div>
+                    <div class="weapon-cone-container">
+                        <div class="weapon-progress-bar">
+                            <div class="level-up-bar vertical">
+                                <div class="level-up-value" style="height: 78%;"></div>
+                                <div class="level-up-thumb" style="bottom: calc(78% - 10px);"></div> <!-- Ползунок -->
+                            </div>
+                            <div class="level-up-indicators vertical">
+                                <label class="level-up-indicator italics checked" data-level="1"><input type="checkbox" checked>1</label>
+                                <label class="level-up-indicator italics checked" data-level="2"><input type="checkbox" checked>2</label>
+                                <label class="level-up-indicator italics checked" data-level="3"><input type="checkbox" checked>3</label>
+                                <label class="level-up-indicator italics checked" data-level="4"><input type="checkbox" checked>4</label>
+                                <label class="level-up-indicator italics" data-level="5"><input type="checkbox">5</label>
+                                <label class="level-up-indicator italics" data-level="6"><input type="checkbox">6</label>
+                            </div>
+                        </div>
+                    <!--<div class="weapon-place no-weapon">
+                            <div class="placeholder">
+                                <button class="weapon-button">
+                                    <img src="/img/колода.svg" class="weapon-icon">
+                                    Поставить конус
+                                </button>
+                                <button class="weapon-button">
+                                    <img src="/img/карты.svg" class="weapon-icon">
+                                    Подобрать конус
+                                </button>
+                            </div>
+                        </div> -->
+
+                        <div class="weapon-place has-weapon">
+                            <img src="/img/эхо из гроба.webp" alt="Weapon" class="weapon-image" width="300" height="420">
+                            <div class="weapon-controls">
+                                <button class="control-button"><img src="/img/перо.svg" class="weapon-icon" alt="Изменить конус"></button>
+                                <button class="control-button"><img src="/img/карты.svg" class="weapon-icon" alt="Подобрать конус"></button>
+                                <button class="control-button"><img src="/img/колода.svg" class="weapon-icon" alt="Поставить конус"></button>
+                            </div>
+                            <div class="weapon-level">
+                                <div class="overlay-level">Ⅰ</div>
+                                <div class="overlay-level-dropdown">
+                                    <button class="dropdown-item">Ⅰ</button>
+                                    <button class="dropdown-item">Ⅱ</button>
+                                    <button class="dropdown-item">Ⅲ</button>
+                                    <button class="dropdown-item">Ⅳ</button>
+                                    <button class="dropdown-item">Ⅴ</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>              
             </div>
