@@ -36,12 +36,19 @@
         <div class="notification-icon"></div>
     </header>
 
+
     <main>
         <section class="main-character-section">
             <div class="character-overview">
+
                 <div class="character-image-container">
-                    <img class="character-image" src="/img/Лоча.webp" height="720">
+                    <img class="character-image" src="/img/Лоча.webp" width="780">
+                    <ul class="character-paths-list">
+                        <li class="character-paths-item"><img class="character-element" src="/img/мнимый.webp" width="32" height="32"></li>
+                        <li class="character-paths-item"><img class="character-way" src="/img/Изобилие.webp" width="32" height="32"></li>
+                    </ul>
                 </div>
+
                 <div class="character-relics-container">
                     <h2 class="relics-title">Реликвии</h2>
                     <ul class="relics-list">
@@ -85,7 +92,7 @@
                             <div class="relic-tooltip">
                                 <img src="/img/скиталец.webp" alt="Relic 1" class="relic-icon five-stars">
                                 <img src="/img/скиталец.webp" alt="Relic 1" class="relic-icon four-stars">
-                                <div class="relic-button">–</div>
+                                <div class="relic-button"></div>
                             </div>
                         </li>
                         <li class="relic-item">
@@ -104,7 +111,64 @@
                         </li>
                     </ul>
                 </div>
+
+                <div class="character-traces-container">
+                    <h2 class="traces-title">Следы</h2>
+                    <ul class="traces-list">
+                        <!-- Основные следы -->
+                        <li class="trace-item main-trace">
+                            <img src="/img/скиталец.webp" alt="trace 1" class="trace-icon" width="48" height="48">
+                            <span class="trace-level">8/10</span>
+                            <div class="tooltip">
+                                <h3>Попытка дурака</h3>
+                                <span>Сверхспособность</span>
+                                <p>Уровень навыка повышается на 2, максимальный уровень - <span class="increase">15</span>.
+                                    Уровень базовой атаки повышается на 1, максимальный уровень - <span class="increase">10</span>.</p>
+                            </div>
+                            <div class="level-controls">
+                                <button class="control-btn minus"></button>
+                                <button class="control-btn plus"></button>
+                            </div>
+                        </li>
+                        <!-- Дополнительные возможности -->
+                        
+                        <li class="trace-item additional-trace">
+                            <div class="additional-trace-circle checked">
+                                <img src="/img/скиталец.webp" alt="trace 1" class="trace-icon">
+                                <div class="tooltip">
+                                    <h3>Название доп. возможности</h3>
+                                    <p>Описание доп. возможности.</p>
+                                </div>
+                            </div>
+                            <div class="enhancement-circle checked">
+                                <img src="/img/скиталец.webp" alt="trace 1" class="trace-icon">
+                                <div class="tooltip">
+                                    <h3>Название усиления</h3>
+                                    <p>Описание усиления.</p>
+                                </div>
+                            </div>
+                            <div class="enhancement-circle">
+                                <img src="/img/скиталец.webp" alt="trace 1" class="trace-icon">
+                                <div class="tooltip">
+                                    <h3>Название усиления</h3>
+                                    <p>Описание усиления.</p>
+                                </div>
+                            </div>
+                            <div class="enhancement-circle">
+                                <img src="/img/скиталец.webp" alt="trace 1" class="trace-icon">
+                                <div class="tooltip">
+                                    <h3>Название усиления</h3>
+                                    <p>Описание усиления.</p>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <!-- Добавьте другие элементы аналогичным образом -->
+                    </ul>
+                </div>                
             </div>
+
+
             <div class="character-info">
                 <h1 class="character-name">Лоча</h1>
                 <div class="character-stars">
@@ -114,10 +178,12 @@
                     <img src="/img/star.svg" alt="Star" class="star"/>
                     <img src="/img/star.svg" alt="Star" class="star"/>
                 </div>
+
                 <div class="character-progress-bar">
                     <div class="progress-value" style="width: 78%;"></div>
                     <span class="progress-procent italics">78%</span>
                 </div>
+
                 <ul class="eidolons-list">
                     <li class="eidolon-item checked">
                         <img class="eidolon-icon" src="/img/скиталец.webp" alt="Eidolon 1">
@@ -128,6 +194,7 @@
                         </div>
                     </li>
                 </ul>
+
                 <div class="level-up-progress-container">
                     <h2 class="level-up-title">Уровень возвышения</h2>
                     <div class="level-up-bar horizontal">
@@ -143,6 +210,7 @@
                         <label class="level-up-indicator italics" data-level="6"><input type="checkbox">6</label>
                     </div>
                 </div> 
+
                 <div class="weapon-info-container">
                     <h2 class="weapon-title">Эхо из гроба</h2>
                     <div class="weapon-stars">

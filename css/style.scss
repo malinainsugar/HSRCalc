@@ -135,12 +135,38 @@ $bar-width: 400px;
     position: relative;
     width: 620px;
     height: 570px;
-}
 
-.character-image {
-    position: absolute;
-    top: -140px;
-    left: -104px;
+    .character-image {
+        position: absolute;
+        top: -54px;
+        left: -116px;
+
+        z-index: 1;
+    }
+
+    .character-paths-list {
+        position: absolute;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        gap: 4px;
+
+        list-style: none;
+
+        z-index: 2;
+
+        .character-paths-item {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+            background-color: $dark-elements;
+        }
+    }
 }
 
 .character-info {
@@ -276,6 +302,11 @@ $bar-width: 400px;
         margin-bottom: 8px;
         font-size: 20px;
         line-height: 24px;
+    }
+
+    span {
+        margin-bottom: 8px;
+        color: $dark-elements;
     }
 
     p {
@@ -695,6 +726,7 @@ $bar-width: 400px;
 /*----------------------------------------------------Реликвии-----------------------------------------------------------------*/
 
 .character-relics-container {
+    margin-bottom: 28px;
 
     .relics-title {
         margin-bottom: 16px;
@@ -793,19 +825,28 @@ $bar-width: 400px;
                 z-index: 10;
         
                 .relic-button {
+                    position: relative;
                     width: 56px;
                     height: 24px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    font-size: 30px;
-                    color: $gold-accent;
 
                     background-color: $dark-elements;
                     border-radius: $border-radius;
 
                     cursor: pointer;
+                }
+
+                .relic-button::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 16px;
+                    height: 2px;
+
+                    background-color: $gold-accent;
+                    border-radius: 20px;
+
+                    transform: translateX(-50%);
                 }
             }
 
@@ -815,3 +856,191 @@ $bar-width: 400px;
         }
     }
 }
+
+
+/*----------------------------------------------------------Следы---------------------------------------------------------------------*/
+
+.character-traces-container {
+    $traces-size: 48px;
+
+    max-width: calc($traces-size * 2 + 32px * 3 + 24px * 4);
+
+    .traces-title {
+        margin-bottom: 12px;
+    }
+
+    .traces-list {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-auto-flow: column;
+        gap: 8px 24px;
+        padding: 0;
+        margin: 0;
+
+        list-style: none;
+
+        .trace-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .trace-icon {
+                width: $traces-size;
+                height: $traces-size;
+
+                border-radius: 50%;
+
+                cursor: pointer;
+            }
+
+            &.main-trace {
+                .trace-icon {
+                    background-color: $dark-elements;
+                }
+
+                .trace-level {
+                    font-size: 16px;
+                }
+
+                .increase {
+                    color: $gold-accent
+                }
+
+                 .tooltip {
+                    display: block;
+                }
+
+                .level-controls {
+                    display: none;
+                    position: absolute;
+                    top: -40px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: flex;
+                    gap: 4px;
+                    padding: 4px;
+
+                    background-color: rgba($light-bg, 0.5);
+                    border-radius: 20px;
+        
+                    .control-btn {
+                        width: 28px;
+                        height: 28px;
+                        border: none;
+                        border-radius: 50%;
+                        background-color: $dark-elements;
+
+                        cursor: pointer;
+        
+                        &:hover {
+                            background-color: $light-bg;
+                            color: $dark-elements;
+                        }
+                    }
+
+                    .minus, .plus {
+                        position: relative;
+                    }
+
+                    .minus::before, .plus::before {
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        width: 16px;
+                        height: 2px;
+
+                        background-color: $gold-accent;
+                        border-radius: 20px;
+
+                        transform: translateX(-50%);
+                    }
+        
+                    .plus::after {
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        width: 16px;
+                        height: 2px;
+
+                        background-color: $gold-accent;
+                        border-radius: 20px;
+
+                        transform: translateX(-50%) rotate(90deg);
+                    }
+                }
+
+                &:hover .level-controls {
+                    display: flex;
+                }
+            }
+
+            &.additional-trace {
+                $traces-size: calc($traces-size + 6px);
+
+                display: flex;
+                flex-direction: row;
+                height: $traces-size;
+                align-items: center;
+                gap: 24px;
+                
+                .trace-icon {
+                    background-color: $dark-elements;
+                }
+
+                .checked {
+                    .trace-icon {
+                        background-color: $light-bg;
+                    }
+                }
+
+                .additional-trace-circle {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: $traces-size;
+                    height: $traces-size;
+                    position: relative;
+
+                    border-radius: 50%;
+                    border-left: 2px solid $light-bg;
+                    border-bottom: 2px solid $light-bg;
+
+                    &:hover .tooltip {
+                        display: block;
+                    }
+
+                }
+                
+                .enhancement-circle {
+                    $traces-size: 32px;
+                    
+                    position: relative;
+            
+                    .trace-icon {
+                        width: $traces-size;
+                        height: $traces-size;
+                    }
+            
+                    &:hover .tooltip {
+                        display: block;
+                    }
+            
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: -18px;
+                        width: 12px;
+                        height: 2px;
+
+
+                        background-color: $gold-accent;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+    }
+}
+
