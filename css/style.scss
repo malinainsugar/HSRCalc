@@ -145,27 +145,37 @@ $bar-width: 400px;
     }
 
     .character-paths-list {
-        position: absolute;
-        display: flex;
-        padding: 0;
-        margin: 0;
-        gap: 4px;
-
-        list-style: none;
-
-        z-index: 2;
-
         .character-paths-item {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             width: 40px;
             height: 40px;
 
-            border-radius: 50%;
-            background-color: $dark-elements;
+            img {
+                width: 32px;
+                height: 32px;
+            }
         }
+    }
+}
+
+.character-paths-list {
+    position: absolute;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 4px;
+
+    list-style: none;
+
+    z-index: 2;
+
+    .character-paths-item {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 50%;
+        background-color: $dark-elements;
     }
 }
 
@@ -304,8 +314,10 @@ $bar-width: 400px;
         line-height: 24px;
     }
 
-    span {
+    > span {
+        display: inline-block;
         margin-bottom: 8px;
+
         color: $dark-elements;
     }
 
@@ -833,20 +845,24 @@ $bar-width: 400px;
                     border-radius: $border-radius;
 
                     cursor: pointer;
-                }
 
-                .relic-button::before {
-                    content: "";
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    width: 16px;
-                    height: 2px;
+                    &:hover {
+                        background-color: $light-bg;                    
+                    }
 
-                    background-color: $gold-accent;
-                    border-radius: 20px;
-
-                    transform: translateX(-50%);
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 16px;
+                        height: 2px;
+    
+                        background-color: $gold-accent;
+                        border-radius: 20px;
+    
+                        transform: translateX(-50%);
+                    }
                 }
             }
 
@@ -907,7 +923,7 @@ $bar-width: 400px;
                     color: $gold-accent
                 }
 
-                 .tooltip {
+                &:hover .tooltip {
                     display: block;
                 }
 
@@ -917,7 +933,6 @@ $bar-width: 400px;
                     top: -40px;
                     left: 50%;
                     transform: translateX(-50%);
-                    display: flex;
                     gap: 4px;
                     padding: 4px;
 
@@ -935,7 +950,6 @@ $bar-width: 400px;
         
                         &:hover {
                             background-color: $light-bg;
-                            color: $dark-elements;
                         }
                     }
 
@@ -994,6 +1008,16 @@ $bar-width: 400px;
                     }
                 }
 
+                &:nth-child(5) {
+                    .additional-trace-circle {
+                        border: none;
+
+                        .trace-icon {
+                            background-color: $dark-elements;
+                        }
+                    }
+                }
+
                 .additional-trace-circle {
                     display: flex;
                     justify-content: center;
@@ -1044,3 +1068,189 @@ $bar-width: 400px;
     }
 }
 
+/*----------------------------------------------------------История и цель---------------------------------------------------------------------*/
+
+.sidebar {
+    position: absolute;
+    top: 258px;
+    display: flex;
+    width: 160px;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    padding: 16px;
+
+    background-color: rgba($light-bg, 0.7);
+    border-radius: $border-radius;
+
+    box-sizing: border-box;
+
+    .sidebar-title {
+        margin-bottom: 4px;
+
+        font-size: 26px;
+        line-height: 26px;
+    }
+
+    .history-character {
+        position: relative;
+        width: 128px;
+        height: 128px;
+
+        .history-img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .character-paths-list {
+            top: 4px;
+            left: 4px;
+
+            .character-paths-item {
+                width: 28px;
+                height: 28px;
+
+                img {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+        }
+
+    }
+
+    &.history-section {
+        left: 16px;
+
+        .history-quantity {
+            position: absolute;
+            right: 4px;
+            bottom: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+
+            font-size: 14px;
+            line-height: 17px;
+
+            background-color: #FF4949;
+            border-radius: 50%;
+
+            z-index: 2;
+        }
+    }
+
+    &.purpose-section {
+        right: 16px;
+
+        .history-character:not(:first-of-type) {
+            width: 112px;
+            height: 112px;
+        }
+    }
+}
+
+
+/*---------------------------------------------------Блок кнопок персонажа-----------------------------------------------------------------*/
+
+.character-section-btn {
+    position: absolute;
+    top: 0;
+    right: -36px; 
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .change-btn {
+        position: relative;
+
+        width: 32px;
+        height: 40px;
+    }
+
+    .theme-slider {
+        position: relative;
+        width: 28px;
+        height: 54px;
+
+        background-color: rgba($light-bg, 0.7);
+        border-radius: 20px;
+        padding: 2px;
+
+        box-sizing: border-box;
+        cursor: pointer;
+
+        .slider-track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            transition: top 0.3s ease, transform 0.3s ease;
+
+            .slider-thumb {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, 0);
+                width: 24px;
+                height: 24px;
+
+                background-color: $dark-elements;
+                border-radius: 50%;
+
+                cursor: pointer;
+
+                .character-theme-icon {
+                    display: none;
+                }
+            }
+        }
+
+        &:hover  .slider-track{
+            top: calc(100% - 24px);
+            
+            .general-theme-icon {
+                display: none;
+            }
+
+            .character-theme-icon {
+                display: block;
+            }
+        }
+    }
+
+
+    > div {
+        cursor: pointer;
+    }
+
+    > div::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        top: 25%;
+        left: calc(100% + 8px);
+        padding: 0 6px;
+        white-space: nowrap;
+
+        font-size: 12px;
+        line-height: 16px;
+        
+        background-color: $light-bg;
+        border-radius: $border-radius;
+
+        z-index: 3;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s, visibility 0.2s;
+    }
+
+    > div:hover::after {
+        opacity: 1;
+        visibility: visible;
+    }
+}
